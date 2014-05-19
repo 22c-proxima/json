@@ -29,7 +29,7 @@ import java.util.Iterator;
 /**
  * Convert a web browser cookie list string to a JSONObject and back.
  * @author JSON.org
- * @version 2010-12-24
+ * @version 2014-05-03
  */
 public class CookieList {
 
@@ -44,7 +44,7 @@ public class CookieList {
      *     cookieJSONObject.getString("value"));
      * @param string  A cookie list string
      * @return A JSONObject
-     * @throws JSONException Error within next() calls
+     * @throws JSONException
      */
     public static JSONObject toJSONObject(String string) throws JSONException {
         JSONObject jo = new JSONObject();
@@ -58,7 +58,6 @@ public class CookieList {
         return jo;
     }
 
-
     /**
      * Convert a JSONObject into a cookie list. A cookie list is a sequence
      * of name/value pairs. The names are separated from the values by '='.
@@ -66,14 +65,15 @@ public class CookieList {
      * in the names and values are replaced by "%hh".
      * @param jo A JSONObject
      * @return A cookie list string
+     * @throws JSONException
      */
-    public static String toString(JSONObject jo) {
-        boolean      b = false;
-        Iterator     keys = jo.keys();
-        String       string;
+    public static String toString(JSONObject jo) throws JSONException {
+        boolean             b = false;
+        Iterator<String>    keys = jo.keys();
+        String              string;
         StringBuilder sb = new StringBuilder();
         while (keys.hasNext()) {
-            string = keys.next().toString();
+            string = keys.next();
             if (!jo.isNull(string)) {
                 if (b) {
                     sb.append(';');
