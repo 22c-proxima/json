@@ -595,7 +595,11 @@ public class JSONArray extends AbstractCollection<Object> {
      * @return this.
      */
     public JSONArray put(Collection<Object> value) {
-        this.put(new JSONArray(value));
+		if (value instanceof JSONArray) {
+	        this.put(value);
+		} else {
+	        this.put(new JSONArray(value));
+		}
         return this;
     }
 
@@ -697,7 +701,11 @@ public class JSONArray extends AbstractCollection<Object> {
      *             If the index is negative or if the value is not finite.
      */
     public JSONArray put(int index, Collection<Object> value) throws JSONException {
-        this.put(index, new JSONArray(value));
+		if (value instanceof JSONArray) {
+	        this.put(index, value);
+		} else {
+	        this.put(index, new JSONArray(value));
+		}
         return this;
     }
 

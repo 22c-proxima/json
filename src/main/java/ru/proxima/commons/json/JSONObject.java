@@ -1054,7 +1054,11 @@ public class JSONObject implements Iterable<String> {
      * @throws JSONException
      */
     public JSONObject put(String key, Collection<Object> value) throws JSONException {
-        this.put(key, new JSONArray(value));
+		if (value instanceof JSONArray) {
+	        this.put(key, value);
+		} else {
+	        this.put(key, new JSONArray(value));
+		}
         return this;
     }
 
