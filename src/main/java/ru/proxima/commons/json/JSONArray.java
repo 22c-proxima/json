@@ -596,7 +596,7 @@ public class JSONArray extends AbstractCollection<Object> {
      */
     public JSONArray put(Collection<Object> value) {
 		if (value instanceof JSONArray) {
-	        this.put(value);
+	        this.myArrayList.add(value);
 		} else {
 	        this.put(new JSONArray(value));
 		}
@@ -702,7 +702,7 @@ public class JSONArray extends AbstractCollection<Object> {
      */
     public JSONArray put(int index, Collection<Object> value) throws JSONException {
 		if (value instanceof JSONArray) {
-	        this.put(index, value);
+	        this.myArrayList.add(index, value);
 		} else {
 	        this.put(index, new JSONArray(value));
 		}
