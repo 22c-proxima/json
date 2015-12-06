@@ -15,6 +15,7 @@ public final class JSONSerializer {
 	private JSONSerializer(){}
 /**
  * Создание JSON-объекта из экземпляра сущности
+ * @param <E> Тип сериализуемой сущности
  * @param object Экземпляр сущности
  * @param builder Фабрика, создающая JSON-объект из сущности
  * @return JSONObject Сериализованная в JSONObject сущность
@@ -28,6 +29,7 @@ public final class JSONSerializer {
 	}
 /**
  * Создание JSON-массива из набора экземпляров сущности
+ * @param <E> Тип сериализуемой сущности
  * @param objects Перечисление сущностей
  * @param builder Фабрика, создающая JSON-объекты из сущностей
  * @return JSONArray Сериализованное в JSONArray перечисление сущностей
@@ -39,6 +41,7 @@ public final class JSONSerializer {
 	}
 /**
  * Создание JSON-массива из набора экземпляров сущности, с ограничением максимального размера
+ * @param <E> Тип сериализуемой сущности
  * @param objects Перечисление сущностей
  * @param builder Фабрика, создающая JSON-объекты из сущностей
  * @param maxResults Максимальное количество объектов в массиве (0 - без ограничения)

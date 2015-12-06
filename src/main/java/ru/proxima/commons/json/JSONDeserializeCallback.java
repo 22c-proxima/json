@@ -1,6 +1,7 @@
 package ru.proxima.commons.json;
 /**
  * Интерфейс фабрики JSON-объекта из экземпляра сущности.
+ * @param <T> Тип восстанавливаемой сущности
  */
 public interface JSONDeserializeCallback<T> {
 /**

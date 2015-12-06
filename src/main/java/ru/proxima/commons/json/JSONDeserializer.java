@@ -17,6 +17,7 @@ public final class JSONDeserializer {
 	private JSONDeserializer(){}
 /**
  * Создание коллекции экземпляров сущности из JSON-массива
+ * @param <E> Тип десериализуемой сущности
  * @param serializedObjects Сериализованные в JSONArray сущности
  * @param deserializer Десериализатор сущностей данного типа
  * @return Коллекция сущностей
@@ -30,6 +31,7 @@ public final class JSONDeserializer {
 	}
 /**
  * Создание коллекции экземпляров сущности из JSON-массива, с ограничением максимального размера
+ * @param <E> Тип десериализуемой сущности
  * @param serializedObjects Сериализованные в JSONArray сущности
  * @param deserializer Десериализатор сущностей данного типа
  * @param maxResults Максимальное количество объектов в коллекции (0 - без ограничения)
